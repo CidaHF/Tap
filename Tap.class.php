@@ -2,12 +2,8 @@
 class Tap {
    protected $pressure = 0;
    
-   public function __construct($run = true) {
+   public function __construct() {
       $this->say("I'm a tap!");
-     
-      if ( $run ) {
-         $this->run();
-      }
    }
    
    public function decrease_pressure() {
