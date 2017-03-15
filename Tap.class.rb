@@ -1,10 +1,8 @@
 class Tap
-    def initialize(r = true)
+    def initialize()
         @pressure = 0;
        
         say("I'm a tap!")
- 
-        run if r
     end
  
     def decrease_pressure
