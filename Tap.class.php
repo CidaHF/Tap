@@ -1,73 +1,60 @@
 <?php
-class Tap
-{
-   protected $pressure_ = 0;
+class Tap {
+   protected $pressure = 0;
    
-   public function __construct ($run = true)
-   {
-      $this->say ("I'm a tap!");
+   public function __construct($run = true) {
+      $this->say("I'm a tap!");
      
-      if ( $run )
-      {
-         $this->run ();
+      if ( $run ) {
+         $this->run();
       }
    }
    
-   public function decrease_pressure ()
-   {
-      $this->pressure_ /= 1.25;
+   public function decrease_pressure() {
+      $this->pressure /= 1.25;
      
-      if ( $this->pressure_ == 0 )
+      if ( $this->pressure == 0 )
       {
-         $this->stop ();
+         $this->stop();
       }
    }
    
-   public function increase_pressure ()
-   {
-      $this->pressure_ *= 1.25;
+   public function increase_pressure() {
+      $this->pressure *= 1.25;
      
-      if ( $this->pressure_ > 20 )
+      if ( $this->pressure > 20 )
       {
-         $this->explode ();
+         $this->explode();
       }
    }
    
-   public function run ()
-   {
-      if ( $this->pressure_ != 0 )
-      {
-         $this->say ("I'm already running!");
+   public function run() {
+      if ( $this->pressure != 0 ) {
+         $this->say("I'm already running!");
       }
-      else
-      {
+      else {
          $this->pressure = 4;
          
-         $this->say ('Catch me if you can!');
+         $this->say('Catch me if you can!');
       }
    }
    
-   public function stop ()
-   {
-      if ( $this->pressure_ != 0 )
-      {
-         $this->pressure_ = 0;
+   public function stop() {
+      if ( $this->pressure != 0 ) {
+         $this->pressure = 0;
          
-         $this->say ('I have stopped!');
+         $this->say('I have stopped!');
       }
-      else
-      {
-         $this->say ("I'm not running!");
+      else {
+         $this->say("I'm not running!");
       }
    }
    
-   public function explode ()
-   {
-      $this->say ('Bang!');
+   public function explode() {
+      $this->say('Bang!');
    }
    
-   public function say ($string)
-   {
+   public function say($string) {
       echo "Tap: {$string}<br />\n";
    }
 }
